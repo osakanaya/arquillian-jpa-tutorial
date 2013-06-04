@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.jboss.org/ironjacamar/schema
+        http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+	<!-- 
+	<datasource enabled="true" jndi-name="jdbc/arquillian" pool-name="ArquillianEmbeddedDerbyPool"> 
+		<connection-url>jdbc:h2:mem:arquillian;DB_CLOSE_DELAY=-1</connection-url> 
+		<driver>h2</driver> 
+	</datasource> 
+	-->
+
+	<datasource jndi-name="jdbc/ArquillianDerby" pool-name="ArquillianEmbeddedDerbyPool"
+		enabled="true" use-ccm="false">
+		<connection-url>jdbc:derby://localhost:1527/ArquillianJPATutorial;create=true</connection-url>
+		<driver>org.apache.derby</driver>
+		<validation>
+			<validate-on-match>false</validate-on-match>
+			<background-validation>false</background-validation>
+		</validation>
+		<statement>
+			<share-prepared-statements>false</share-prepared-statements>
+		</statement>
+	</datasource>
+</datasources>
